@@ -10,7 +10,7 @@ public class ThreadTest_2 extends Thread{
     private final Object self;
 
 
-    public ThreadTest_2(String name,Object prev,Object self){
+    private ThreadTest_2(String name, Object prev, Object self){
         this.name=name;
         this.prev=prev;
         this.self=self;
@@ -23,7 +23,7 @@ public class ThreadTest_2 extends Thread{
 
                 synchronized (self){
 
-                    System.out.println(name);
+                    System.out.print(name);
                     count--;
                     self.notify();
 
@@ -41,14 +41,17 @@ public class ThreadTest_2 extends Thread{
         Object A=new Object();
         Object B=new Object();
         Object C=new Object();
-        ThreadTest_2 th1=new ThreadTest_2("A",C,A);
+        Object D=new Object();
+        ThreadTest_2 th1=new ThreadTest_2("A",D,A);
         ThreadTest_2 th2=new ThreadTest_2("B",A,B);
         ThreadTest_2 th3=new ThreadTest_2("C",B,C);
+        ThreadTest_2 th4=new ThreadTest_2("D",C,D);
         th1.start();
         Thread.sleep(100);
         th2.start();
         Thread.sleep(100);
         th3.start();
         Thread.sleep(100);
+        th4.start();
     }
 }

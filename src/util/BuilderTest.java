@@ -23,7 +23,6 @@ public class BuilderTest {
         Builder(int servingSize, int servings){
             this.servingSize=servingSize;
             this.servings=servings;
-
         }
 
         Builder setCalories(int val){

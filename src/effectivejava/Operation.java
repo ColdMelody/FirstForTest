@@ -1,5 +1,6 @@
 package effectivejava;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,6 +62,7 @@ public enum Operation {
     public static void main(String args[]) {
         double x = 4.f;
         double y = 2.0f;
+        System.out.println(Arrays.toString(Operation.values()));
         for (Operation operation : Operation.values()) {
             System.out.printf("%s %f %s %f = %f%n", fromString(operation.toString()),x, operation, y, operation.apply(x, y));
 

@@ -1,6 +1,7 @@
 package util;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created by Administrator on 2016/4/19.
@@ -17,6 +18,8 @@ public class FileTest {
     public static void main(String[] args) {
 
         File file = getFile("d:" + File.separator + "me.txt");
+        File[] files=getFile("d:").listFiles();
+        System.out.println(Arrays.asList(files));
         System.out.println(file.lastModified());
         System.out.println(file.getPath());
         System.out.println(file.length());
