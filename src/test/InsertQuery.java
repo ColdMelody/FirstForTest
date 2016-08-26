@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class InsertQuery {
 
-    private static void query(int[] ts) {
+    public  void query(int[] ts) {
         if (ts.length <= 2) {
             throw new UnsupportedOperationException();
         }
@@ -23,11 +23,15 @@ public class InsertQuery {
             ts[position] = key;
         }
     }
-
-    public static void main(String[] args) {
-        int[] array = {2, 4, 76, 3, 587, -42, 45, 372, -12};
-        System.out.println(Arrays.toString(array));
-        query(array);
-        System.out.println(Arrays.toString(array));
+    public void queryOut(int[] ts){
+        query(ts);
+        System.out.println(Arrays.toString(ts));
     }
+
+//    public static void main(String[] args) {
+//        int[] array = {2, 4, 76, 3, 587, -42, 45, 372, -12};
+//        System.out.println(Arrays.toString(array));
+//        query(array);
+//        System.out.println(Arrays.toString(array));
+//    }
 }
